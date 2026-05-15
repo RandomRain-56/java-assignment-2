@@ -8,6 +8,33 @@ package githubjavaassignment.newpackage;
  *
  * @author 350265507
  */
-public class AlgorithmCase {
-    
+public class AlgorithmCase extends EthicsCase{
+    //create some private variabel
+    private String biasType;
+    /**
+     * constructor 
+     * @param caseTitle variable to parent class
+     * @param description
+     * @param category
+     * @param biasType
+     */
+    public AlgorithmCase(String caseTitle, String description, String category,String biasType){
+        super(caseTitle, description, category);
+        this.biasType =biasType;
+    }
+    /**
+     * get the bias type 
+     * @return return the value
+     */
+    public String getBiasType(){
+        return biasType;
+    }
+    @Override
+    /**
+     * make the description
+     * @return give some information
+     */
+    public String toString(){
+        return biasType;
+    }
 }

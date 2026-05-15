@@ -23,6 +23,9 @@ public class Verdict {
     }
     /**
      * constructor with parament 
+     * @param caseName variable to store
+     * @param verdict variable to store
+     * @param reason variable to store
      */
     public void verdict(String caseName, String verdict,String reason){
         this.caseName = caseName;

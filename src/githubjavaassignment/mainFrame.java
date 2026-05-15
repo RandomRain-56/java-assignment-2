@@ -25,7 +25,7 @@ public class mainFrame extends javax.swing.JFrame {
      */
     public mainFrame() {
         initComponents();
-        EC[0] = new PrivacyCase();
+        //EC[0] = new PrivacyCase();
     }
 
     /**

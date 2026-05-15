@@ -9,11 +9,19 @@ package githubjavaassignment.newpackage;
  * @author 350265507
  */
 public class EthicsCase {
+    //create three string variables for three necessary informations
     private String caseTitle;
     private String description;
     private String category;
+    //create "has-a" relationship with class Verdict
     public Verdict verdict;
     
+    /**
+     * 
+     * @param caseTitle
+     * @param description
+     * @param category 
+     */
     public EthicsCase(String caseTitle, String description, String category){
         this.caseTitle = caseTitle;
         this.description = description;

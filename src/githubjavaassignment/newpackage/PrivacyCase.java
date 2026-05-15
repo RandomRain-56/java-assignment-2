@@ -17,8 +17,8 @@ public class PrivacyCase extends EthicsCase{
      * @param description variable for parent class
      * @param dataType variable for parent class
      */
-    public PrivacyCase(String caseTitle, String description,String category,String dataType){
-        super(caseTitle, description,category);
+    public PrivacyCase(String caseTitle, String description,String dataType){
+        super(caseTitle, description, "PrivacyCase");
         this.dataType = dataType;
     }
     /**

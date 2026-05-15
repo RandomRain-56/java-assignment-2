@@ -18,8 +18,8 @@ public class AlgorithmCase extends EthicsCase{
      * @param category
      * @param biasType
      */
-    public AlgorithmCase(String caseTitle, String description, String category,String biasType){
-        super(caseTitle, description, category);
+    public AlgorithmCase(String caseTitle, String description, String biasType){
+        super(caseTitle, description, "AlgorithmCase");
         this.biasType =biasType;
     }
     /**

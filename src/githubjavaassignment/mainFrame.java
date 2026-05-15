@@ -25,7 +25,31 @@ public class mainFrame extends javax.swing.JFrame {
      */
     public mainFrame() {
         initComponents();
-        //EC[0] = new PrivacyCase();
+        EC[0] = new PrivacyCase("The Always-On Microphone", 
+        "A smart speaker company recorded household conversations even when the device was not activated. Employees reviewed the recordings.",
+        "audio recordings");
+        EC[1] = new AlgorithmCase("The Biased Hiring Bot", 
+        "A tech company's AI screening tool ranked male applicants higher than equally qualified female applicants.",
+        "gender bias");
+        EC[2] = new MisinformationCase("The Deepfake Politician", 
+        "A deepfake video of a candidate saying things they never said spread widely online during an election before being identified as fake.",
+        "deepfake video");
+        EC[3] = new IntellectualPropertyCase("AI Trained on Artist Work", 
+        "An AI image generator was trained on millions of artworks scraped without permission. Artists receive no credit or payment.",
+        "deepfake video");
+        
+        EC[4] = new PrivacyCase("Unending Scam Calls", 
+        "An insurance company packaged and sold customers' personal information to telecom fraud companies. The scam calls could call out your name and home address.",
+        "Telephone");
+        EC[5] = new AlgorithmCase("Biased Criminal Enforcement Robot", 
+        "In risk assessment, a criminal enforcement robot is twice as likely to incorrectly classify Black defendants as having a higher risk of violent recidivism as White defendants.",
+        "Racial Bias");
+        EC[6] = new MisinformationCase("Bots and Trolls", 
+        "Automated accounts (bots) and human-operated false personas (trolls) are often used to amplify disinformation online. Bots can rapidly share and like content, making it appear more popular and credible. Trolls can engage in conversations to push false narratives and damaging discord.",
+        "AI and irrational user");
+        EC[7] = new IntellectualPropertyCase("The Impact of Open-Source Software", 
+        "With the source code freely available, it can be more difficult to prevent others from copying and distributing it. This can be particularly challenging for companies that rely on their software as a core part of their business model.",
+        "Open-Source Software");
     }
 
     /**
@@ -130,6 +154,10 @@ public class mainFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        new Scenario1().setVisible(true);
+        this.setVisible(false);
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

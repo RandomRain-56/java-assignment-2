@@ -15,6 +15,7 @@ public class Scenario1 extends javax.swing.JFrame {
      */
     public Scenario1() {
         initComponents();
+        
     }
 
     /**

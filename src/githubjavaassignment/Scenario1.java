@@ -3,18 +3,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package githubjavaassignment;
+//set the part we need to use for start code
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
 
 /**
  *
  * @author 350325485
  */
 public class Scenario1 extends javax.swing.JFrame {
-
+    //add a global cariable to contro the scenarios number
+    public static int scenarioNumber = 1;
     /**
      * Creates new form Scenario1
      */
     public Scenario1() {
         initComponents();
+        //set the code to run for open time
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowActivated(WindowEvent e) {
+                System.out.println("JFrame is now focused!");
+                //add code here
+                
+                
+            }
+        });
+
         
     }
 

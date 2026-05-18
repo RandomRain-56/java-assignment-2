@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package githubjavaassignment;
+//add the class we are going to use 
+import githubjavaassignment.newpackage.EthicsCase;
+import githubjavaassignment.newpackage.AlgorithmCase;
+import githubjavaassignment.newpackage.IntellectualPropertyCase;
+import githubjavaassignment.newpackage.MisinformationCase;
+import githubjavaassignment.newpackage.PrivacyCase;
 //set the part we need to use for start code
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
@@ -12,8 +18,7 @@ import java.awt.event.WindowAdapter;
  * @author 350325485
  */
 public class Scenario1 extends javax.swing.JFrame {
-    //add a global cariable to contro the scenarios number
-    public static int scenarioNumber = 1;
+    
     /**
      * Creates new form Scenario1
      */
@@ -25,8 +30,11 @@ public class Scenario1 extends javax.swing.JFrame {
             public void windowActivated(WindowEvent e) {
                 System.out.println("JFrame is now focused!");
                 //add code here
-                
-                
+                EthicsCase E = mainFrame.EC[mainFrame.scenarioNumber];
+                ScenarioText.setText(E.getCaseTitle());
+                CategoryText.setText(E.getCategory());
+                DescriptionText.setText(E.getCaseDescription());
+                mainFrame.scenarioNumber++;
             }
         });
 
@@ -70,6 +78,11 @@ public class Scenario1 extends javax.swing.JFrame {
 
         DescriptionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         DescriptionText.setText("Description");
+        DescriptionText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DescriptionTextActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(YesBottom);
         YesBottom.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -88,7 +101,6 @@ public class Scenario1 extends javax.swing.JFrame {
         jLabel5.setText("Reason:");
 
         ReasonText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ReasonText.setText("Reason Text");
         ReasonText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReasonTextActionPerformed(evt);
@@ -102,10 +114,6 @@ public class Scenario1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -121,18 +129,21 @@ public class Scenario1 extends javax.swing.JFrame {
                                     .addComponent(CategoryText, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)))
                             .addComponent(DescriptionText, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
+                        .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
                                 .addComponent(YesBottom)
-                                .addGap(74, 74, 74)
+                                .addGap(95, 95, 95)
                                 .addComponent(NoBottom))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(ReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jLabel5))))
                 .addContainerGap(119, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 118, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(174, 174, 174))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,6 +181,10 @@ public class Scenario1 extends javax.swing.JFrame {
     private void ReasonTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReasonTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ReasonTextActionPerformed
+
+    private void DescriptionTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DescriptionTextActionPerformed
 
     /**
      * @param args the command line arguments

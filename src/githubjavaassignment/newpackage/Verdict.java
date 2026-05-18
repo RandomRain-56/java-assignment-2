@@ -27,7 +27,7 @@ public class Verdict {
      * @param verdict variable to store
      * @param reason variable to store
      */
-    public void verdict(String caseName, String verdict,String reason){
+    public Verdict(String caseName, String verdict,String reason){
         this.caseName = caseName;
         this.reason = reason;
         this.studentVerdict = verdict;

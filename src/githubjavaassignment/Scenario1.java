@@ -9,6 +9,7 @@ import githubjavaassignment.newpackage.AlgorithmCase;
 import githubjavaassignment.newpackage.IntellectualPropertyCase;
 import githubjavaassignment.newpackage.MisinformationCase;
 import githubjavaassignment.newpackage.PrivacyCase;
+import githubjavaassignment.newpackage.Verdict;
 //set the part we need to use for start code
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
@@ -34,7 +35,6 @@ public class Scenario1 extends javax.swing.JFrame {
                 ScenarioText.setText(E.getCaseTitle());
                 CategoryText.setText(E.getCategory());
                 DescriptionText.setText(E.getCaseDescription());
-                mainFrame.scenarioNumber++;
             }
         });
 
@@ -55,12 +55,14 @@ public class Scenario1 extends javax.swing.JFrame {
         ScenarioText = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         CategoryText = new javax.swing.JLabel();
-        DescriptionText = new javax.swing.JTextField();
         YesBottom = new javax.swing.JRadioButton();
         NoBottom = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
-        ReasonText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        DescriptionText = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ReasonText = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,14 +78,6 @@ public class Scenario1 extends javax.swing.JFrame {
         CategoryText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         CategoryText.setText("-----------------------------");
 
-        DescriptionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        DescriptionText.setText("Description");
-        DescriptionText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DescriptionTextActionPerformed(evt);
-            }
-        });
-
         buttonGroup1.add(YesBottom);
         YesBottom.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         YesBottom.setText("Ethical");
@@ -96,54 +90,64 @@ public class Scenario1 extends javax.swing.JFrame {
         buttonGroup1.add(NoBottom);
         NoBottom.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         NoBottom.setText("Unethical");
+        NoBottom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoBottomActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Reason:");
 
-        ReasonText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ReasonText.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setText("Submit >");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReasonTextActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("Submit >");
+        jScrollPane1.setViewportView(DescriptionText);
+
+        jScrollPane2.setViewportView(ReasonText);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1))))
+                .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3))
-                                .addGap(71, 71, 71)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ScenarioText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(CategoryText, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)))
-                            .addComponent(DescriptionText, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
+                        .addGap(71, 71, 71)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ScenarioText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CategoryText, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(YesBottom)
-                                .addGap(95, 95, 95)
-                                .addComponent(NoBottom))
-                            .addComponent(jLabel5))))
+                        .addGap(125, 125, 125)
+                        .addComponent(YesBottom)
+                        .addGap(95, 95, 95)
+                        .addComponent(NoBottom))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(119, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 118, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(174, 174, 174))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,17 +160,17 @@ public class Scenario1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(CategoryText))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DescriptionText, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(YesBottom)
                     .addComponent(NoBottom))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
                 .addComponent(jButton1)
                 .addGap(17, 17, 17))
         );
@@ -176,15 +180,29 @@ public class Scenario1 extends javax.swing.JFrame {
 
     private void YesBottomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YesBottomActionPerformed
         // TODO add your handling code here:
+        YesBottom.setActionCommand("Y");
     }//GEN-LAST:event_YesBottomActionPerformed
 
-    private void ReasonTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReasonTextActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ReasonTextActionPerformed
+        //check that user select something 
+        if (buttonGroup1.getSelection() != null){
+            //store the vertice object into the array
+            Verdict verdict = new Verdict(ScenarioText.getText(), buttonGroup1.getSelection().getActionCommand(),ReasonText.getText());
+            //give this object into the array
+            mainFrame.EC[mainFrame.scenarioNumber].verdict = verdict;
+            System.out.println(verdict);
+            //change the frame from here
+            //new Scenario1().setVisible(true);
+            //this.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void DescriptionTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionTextActionPerformed
+    private void NoBottomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoBottomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DescriptionTextActionPerformed
+        NoBottom.setActionCommand("N");
+        //mainFrame.EthiclaChoices[mainFrame.scenarioNumber] = 0;
+    }//GEN-LAST:event_NoBottomActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,9 +241,9 @@ public class Scenario1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CategoryText;
-    private javax.swing.JTextField DescriptionText;
+    private javax.swing.JTextPane DescriptionText;
     private javax.swing.JRadioButton NoBottom;
-    private javax.swing.JTextField ReasonText;
+    private javax.swing.JTextPane ReasonText;
     private javax.swing.JLabel ScenarioText;
     private javax.swing.JRadioButton YesBottom;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -233,5 +251,7 @@ public class Scenario1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

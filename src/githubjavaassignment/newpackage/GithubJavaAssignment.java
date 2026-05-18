@@ -15,6 +15,13 @@ public class GithubJavaAssignment {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        PrivacyCase PC = new PrivacyCase ("Data leak Case", " Company Exposed emials publicly", "Personal Data");
+        System.out.println(PC);
+        PC.verdict = new Verdict("data leak Case", "Unthical", "user data was shared without consent");
+        System.out.println(PC.verdict);
+        System.out.println(PC.getCaseDescription());
+        System.out.println(PC.getCategory());
+        System.out.println(PC.getDataType());
     }
     
 }

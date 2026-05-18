@@ -192,9 +192,11 @@ public class Scenario1 extends javax.swing.JFrame {
             //give this object into the array
             mainFrame.EC[mainFrame.scenarioNumber].verdict = verdict;
             System.out.println(verdict);
+            //add the number for next senario
+            mainFrame.scenarioNumber++;
             //change the frame from here
             //new Scenario1().setVisible(true);
-            //this.setVisible(false);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -107,8 +107,10 @@ public class Scenario1 extends javax.swing.JFrame {
             }
         });
 
+        DescriptionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(DescriptionText);
 
+        ReasonText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jScrollPane2.setViewportView(ReasonText);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,37 +118,35 @@ public class Scenario1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(NoBottom)
                 .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3))
-                        .addGap(71, 71, 71)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ScenarioText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CategoryText, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(YesBottom)
-                        .addGap(95, 95, 95)
-                        .addComponent(NoBottom))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(117, 117, 117)
+                            .addComponent(jButton1))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(85, 85, 85)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(79, 79, 79)
+                                    .addComponent(ScenarioText, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(70, 70, 70)
+                                    .addComponent(CategoryText, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(24, 24, 24))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(96, 96, 96)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(YesBottom))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(119, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -168,11 +168,11 @@ public class Scenario1 extends javax.swing.JFrame {
                     .addComponent(NoBottom))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                .addGap(17, 17, 17)
                 .addComponent(jButton1)
-                .addGap(17, 17, 17))
+                .addContainerGap())
         );
 
         pack();
@@ -189,6 +189,7 @@ public class Scenario1 extends javax.swing.JFrame {
         if (buttonGroup1.getSelection() != null){
             //store the vertice object into the array
             Verdict verdict = new Verdict(ScenarioText.getText(), buttonGroup1.getSelection().getActionCommand(),ReasonText.getText());
+            System.out.println(buttonGroup1.getSelection().getActionCommand());
             //give this object into the array
             mainFrame.EC[mainFrame.scenarioNumber].verdict = verdict;
             System.out.println(verdict);
@@ -196,7 +197,7 @@ public class Scenario1 extends javax.swing.JFrame {
             mainFrame.scenarioNumber++;
             //change the frame from here
             //new Scenario1().setVisible(true);
-            this.setVisible(false);
+            //this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

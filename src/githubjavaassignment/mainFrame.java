@@ -19,9 +19,14 @@ import githubjavaassignment.newpackage.PrivacyCase;
  * @author 350325485
  */
 public class mainFrame extends javax.swing.JFrame {
+    
+  
+    
+    
     public static EthicsCase [] EC = new EthicsCase[8];
     //add a global cariable to contro the scenarios number
     public static int scenarioNumber = 0;
+    
     /**
      * Creates new form mainFrame
      */

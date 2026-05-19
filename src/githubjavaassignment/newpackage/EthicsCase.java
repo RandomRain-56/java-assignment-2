@@ -44,6 +44,10 @@ public class EthicsCase {
     
     }
     
+    public Verdict getVerdict(){
+        return this.verdict;
+    }
+    
     public String toString(){
         return caseTitle + description + category;
     }

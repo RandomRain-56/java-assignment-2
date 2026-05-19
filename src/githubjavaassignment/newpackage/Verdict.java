@@ -23,9 +23,9 @@ public class Verdict {
     }
     /**
      * constructor with parament 
-     * @param caseName variable to store
-     * @param verdict variable to store
-     * @param reason variable to store
+     * @param caseName variable for scenario name
+     * @param verdict variable for user's choice
+     * @param reason variable for user's reason 
      */
     public Verdict(String caseName, String verdict,String reason){
         this.caseName = caseName;

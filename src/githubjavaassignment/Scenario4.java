@@ -18,12 +18,12 @@ import java.awt.event.WindowAdapter;
  *
  * @author 350325485
  */
-public class Scenario1 extends javax.swing.JFrame {
+public class Scenario4 extends javax.swing.JFrame {
     
     /**
      * Creates new form Scenario1
      */
-    public Scenario1() {
+    public Scenario4() {
         initComponents();
         //set the code to run for open time
         addWindowListener(new WindowAdapter() {
@@ -197,7 +197,7 @@ public class Scenario1 extends javax.swing.JFrame {
             //add the number for next senario
             mainFrame.scenarioNumber++;
             //change the frame from here
-            new Scenario2().setVisible(true);
+            new Scenario5().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -225,20 +225,21 @@ public class Scenario1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Scenario1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Scenario4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Scenario1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Scenario4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Scenario1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Scenario4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Scenario1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Scenario4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Scenario1().setVisible(true);
+                new Scenario4().setVisible(true);
             }
         });
     }

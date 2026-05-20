@@ -22,7 +22,7 @@ public class mainFrame extends javax.swing.JFrame {
     
   
     
-    
+    //create array for cases with reference class EthicsCase
     public static EthicsCase [] EC = new EthicsCase[8];
     //add a global cariable to contro the scenarios number
     public static int scenarioNumber = 0;
@@ -32,6 +32,8 @@ public class mainFrame extends javax.swing.JFrame {
      */
     public mainFrame() {
         initComponents();
+        
+        //create 8 cases with different instance classes
         EC[0] = new PrivacyCase("The Always-On Microphone", 
         "A smart speaker company recorded household conversations even when the device was not activated. Employees reviewed the recordings.",
         "audio recordings");
@@ -44,7 +46,6 @@ public class mainFrame extends javax.swing.JFrame {
         EC[3] = new IntellectualPropertyCase("AI Trained on Artist Work", 
         "An AI image generator was trained on millions of artworks scraped without permission. Artists receive no credit or payment.",
         "deepfake video");
-        
         EC[4] = new PrivacyCase("Unending Scam Calls", 
         "An insurance company packaged and sold customers' personal information to telecom fraud companies. The scam calls could call out your name and home address.",
         "Telephone");
@@ -160,9 +161,9 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // open new page
         new Scenario1().setVisible(true);
-        this.setVisible(false);
+        this.setVisible(false);//close the method
         
         
     }//GEN-LAST:event_jButton2ActionPerformed

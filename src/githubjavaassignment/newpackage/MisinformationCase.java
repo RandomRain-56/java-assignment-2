@@ -10,8 +10,14 @@ package githubjavaassignment.newpackage;
  */
 public class MisinformationCase extends EthicsCase{
     
-    private String mediaType;
+    private String mediaType;//create the string variable symbolized the type of media
     
+    /**
+     * the constructor for class
+     * @param caseTitle the string variable symbolize the title
+     * @param description the string variable symbolize the description
+     * @param mediaType the string variable symbolize the mediaType
+     */
     public MisinformationCase(String caseTitle, String description, String mediaType) {
         super(caseTitle, description, "Misinformation");
         this.mediaType = mediaType;
@@ -19,11 +25,18 @@ public class MisinformationCase extends EthicsCase{
     
     
   
-    
+    /**
+     * the method used to output media type
+     * @return the media type with string variable
+     */
     public String getMediaType(){
         return this.mediaType;
     }
     
+    /**
+     * The method used to output the sentences including informations with particular format
+     * @return the sentence by string variable
+     */
     public String toString(){
         return super.toString() + this.mediaType;
     }

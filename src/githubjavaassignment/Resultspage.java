@@ -4,10 +4,11 @@
  */
 package githubjavaassignment;
 
+//import two class from another pactage
 import githubjavaassignment.newpackage.EthicsCase;
 import githubjavaassignment.newpackage.Verdict;
 
-
+//import the class used to operate the coding while the window opened
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
 
@@ -24,26 +25,31 @@ public class Resultspage extends javax.swing.JFrame {
     public Resultspage() {
         
         initComponents();
+        //the method used to operate the code while the window opened
         addWindowListener(new WindowAdapter() {
+
             @Override
             public void windowActivated(WindowEvent e) {
                 int ethical = 0;
-                int unethical = 0;
-                System.out.println("JFrame is now focused!");
-                for (EthicsCase x: mainFrame.EC){
+                int unethical = 0;//create two integer variables for number of ethical and unenthical
+               
+                for (EthicsCase x: mainFrame.EC){//use for loop to determine all part of array
                     if ("Y".equals(x.getVerdict().getStudentVerdict())){
-                        ethical +=1;
+                        ethical +=1;//add one for ethical
                     
                     }else if ("N".equals(x.getVerdict().getStudentVerdict())){
-                        unethical +=1;
+                        unethical +=1;//add one for unethical
                     
                     }
                     
                 jLabel4.setText(""+ethical);
                 jLabel5.setText(""+unethical);
+                //output the numbers for two kinds
                 
                 
-                jTextArea2.setText("");
+                jTextArea2.setText("Your profile: ");
+                
+                
                 }
                 
                 

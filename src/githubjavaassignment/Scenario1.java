@@ -193,6 +193,9 @@ public class Scenario1 extends javax.swing.JFrame {
             //change the frame from here
             //new Scenario2().setVisible(true);
             //this.setVisible(false);
+            //Temporary Transfer
+            new Resultspage().setVisible(true);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

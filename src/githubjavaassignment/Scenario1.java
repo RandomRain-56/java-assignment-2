@@ -191,8 +191,8 @@ public class Scenario1 extends javax.swing.JFrame {
             //add the number for next senario
             mainFrame.scenarioNumber++;
             //change the frame from here
-            new Scenario2().setVisible(true);
-            this.setVisible(false);
+            //new Scenario2().setVisible(true);
+            //this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
